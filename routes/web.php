@@ -18,3 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/registro-actividad', 'ActivityController@index')->name('register.activity');
+Route::post('/registro-actividad', 'ActivityController@store')->name('activity.store');
+Route::get('/registro-tiempo', 'TimeController@index')->name('register.time');
+Route::get('/actividad-detalle/{id}', 'ActivityController@show')->name('activity.show');
+Route::post('/registro-tiempo', 'TimeController@store')->name('time.store');

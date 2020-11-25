@@ -33,19 +33,30 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        @auth
+                        <li class="nav-item">
+                            <a class="nav-link " style="text-align: left;" href="{{ route('home') }}">Inicio </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " style="text-align: left;" href="{{ route('register.activity') }}">Registrar actividad </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " style="text-align: left;" href="{{ route('register.time') }}">Registrar tiempos </a>
+                        </li>
+                        @endauth
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
+
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar Sesion') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrar Usuario') }}</a>
                                 </li>
                             @endif
                         @else
